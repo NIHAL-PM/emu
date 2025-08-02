@@ -1,0 +1,34 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "app.py",
+            "use": "@vercel/python"
+        },
+        {
+            "src": "static/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/app.py"
+        }
+    ],
+    "env": {
+        "MONGODB_URI": "@mongodb_uri",
+        "ENCRYPTION_KEY": "@encryption_key"
+    },
+    "regions": ["iad1"],
+    "functions": {
+        "app.py": {
+            "memory": 1024,
+            "maxDuration": 10
+        }
+    }
+}
