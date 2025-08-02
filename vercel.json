@@ -24,11 +24,5 @@
         "MONGODB_URI": "@mongodb_uri",
         "ENCRYPTION_KEY": "@encryption_key"
     },
-    "regions": ["iad1"],
-    "functions": {
-        "app.py": {
-            "memory": 1024,
-            "maxDuration": 10
-        }
-    }
+    "regions": ["iad1"]
 }
